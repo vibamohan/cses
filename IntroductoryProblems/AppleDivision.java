@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
 public class AppleDivision {
+    /**
+     * This is a mixture of a sort of greedy way and just going through subsets
+     * We make 2 choices, to keep the element chosen in the first set or the second set, then advance the index pointer
+     * We choose the minimum of the 2 at every step, so this makes it so that at the end of the recursion, the minimum difference occrus
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
