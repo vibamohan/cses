@@ -11,6 +11,14 @@ public class Apartments {
    static boolean withinThreshold(int request, int size, int maxAllowedDeviation) {
         return Math.abs(request - size) <= maxAllowedDeviation;
    }
+
+   /**
+    * This uses the 2 pointer technique, taking in the 2 arrays through stdin
+    * Sorting the 2 arrays, if the request lies within the request, go to next request and size
+    * If the request is too small for the current size, go forward one request
+    * If the request is too big for the current size, go forward one size
+    * Output number of requests satisfied
+    */
    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int kApplicants = scanner.nextInt();
@@ -29,6 +37,7 @@ public class Apartments {
         int sizePtr = 0;
         int requestPtr = 0;
         int granted = 0;
+
         while (sizePtr < kApartments && requestPtr < kApplicants) {
             if (withinThreshold(requests[requestPtr], aptSizes[sizePtr], kMaxDeviation)) {
                 sizePtr++;
