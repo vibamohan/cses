@@ -1,0 +1,33 @@
+# Java class files
+*.class
+
+# VSCode settings
+.vscode/
+
+# IntelliJ IDEA project files
+.idea/
+*.iml
+*.iws
+
+# MacOS system file
+.DS_Store
+
+# Windows system file
+Thumbs.db
+
+# Input/output/test files (if you generate them)
+*.in
+*.out
+*.ans
+*.tmp
+*.log
+
+# Backup files
+*~
+
+# Optional: compiled jar or other temp build artifacts
+*.jar
+*.exe
+
+# If you use GitHub Codespaces or other environments
+*.code-workspace
