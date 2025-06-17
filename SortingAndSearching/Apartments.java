@@ -14,7 +14,7 @@ public class Apartments {
 
    /**
     * This uses the 2 pointer technique, taking in the 2 arrays through stdin
-    * Sorting the 2 arrays, if the request lies within the request, go to next request and size
+    * Sorting the 2 arrays, if the currently viewing size lies within the request, give this apt and move on
     * If the request is too small for the current size, go forward one request
     * If the request is too big for the current size, go forward one size
     * Output number of requests satisfied

@@ -2,25 +2,25 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-// record Interval(int start, int end) {};
+record Interval(int start, int end) {};
 
-class Interval {
-    int start;
-    int end;
+// class Interval {
+//     int start;
+//     int end;
 
-    public Interval(int start, int end) {
-        this.start = start;
-        this.end = end;
-    }
+//     public Interval(int start, int end) {
+//         this.start = start;
+//         this.end = end;
+//     }
 
-    public int start() {
-        return start;
-    }
+//     public int start() {
+//         return start;
+//     }
 
-    public int end() {
-        return end;
-    }
-}
+//     public int end() {
+//         return end;
+//     }
+// }
 
 public class MovieFestivals {
    public static void main(String[] args) {
@@ -30,6 +30,7 @@ public class MovieFestivals {
 
         for (int i = 0; i < n; i++) {
             movieShowings[i] = new Interval(scanner.nextInt(), scanner.nextInt());
+            new Interval(i, n)
         }
 
         Arrays.sort(movieShowings, new Comparator<Interval>() {
