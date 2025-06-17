@@ -21,9 +21,9 @@ public class Apartments {
     */
    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int kApplicants = scanner.nextInt();
-        int kApartments = scanner.nextInt();
-        int kMaxDeviation = scanner.nextInt();
+        final int kApplicants = scanner.nextInt();
+        final int kApartments = scanner.nextInt();
+        final int kMaxDeviation = scanner.nextInt();
 
         int[] aptSizes = new int[kApartments];
         int[] requests = new int[kApplicants];

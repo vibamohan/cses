@@ -30,7 +30,6 @@ public class MovieFestivals {
 
         for (int i = 0; i < n; i++) {
             movieShowings[i] = new Interval(scanner.nextInt(), scanner.nextInt());
-            new Interval(i, n)
         }
 
         Arrays.sort(movieShowings, new Comparator<Interval>() {
