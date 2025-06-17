@@ -2,7 +2,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-record Interval(int start, int end) {};
+record Interval(int start, int end) {}
+;
 
 // class Interval {
 //     int start;
@@ -23,30 +24,33 @@ record Interval(int start, int end) {};
 // }
 
 public class MovieFestivals {
-   public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        Interval[] movieShowings = new Interval[n];
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    int n = scanner.nextInt();
+    Interval[] movieShowings = new Interval[n];
 
-        for (int i = 0; i < n; i++) {
-            movieShowings[i] = new Interval(scanner.nextInt(), scanner.nextInt());
-        }
+    for (int i = 0; i < n; i++) {
+      movieShowings[i] = new Interval(scanner.nextInt(), scanner.nextInt());
+    }
 
-        Arrays.sort(movieShowings, new Comparator<Interval>() {
-            public int compare(Interval i1, Interval i2) {
-                return Integer.compare(i1.end(), i2.end());
-        }});
+    Arrays.sort(
+        movieShowings,
+        new Comparator<Interval>() {
+          public int compare(Interval i1, Interval i2) {
+            return Integer.compare(i1.end(), i2.end());
+          }
+        });
 
-        int watched = 0;
-        int lastEnd = 0;
+    int watched = 0;
+    int lastEnd = 0;
 
-        for (int i = 0; i < n; i++) {
-            if (movieShowings[i].start() >= lastEnd) {
-                watched++;
-                lastEnd = movieShowings[i].end();
-            }
-        }
+    for (int i = 0; i < n; i++) {
+      if (movieShowings[i].start() >= lastEnd) {
+        watched++;
+        lastEnd = movieShowings[i].end();
+      }
+    }
 
-        System.out.println(watched);
-   }
+    System.out.println(watched);
+  }
 }
