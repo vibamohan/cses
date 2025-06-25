@@ -3,6 +3,9 @@ import java.util.Scanner;
 
 public class StickLengths {
   public static void main(String[] args) {
+    /**
+     * Find median, then check deviations from median 
+     */
     final Scanner scanner = new Scanner(System.in);
     int kN = scanner.nextInt();
 

@@ -5,6 +5,9 @@ public class CollectingNumbersII {
     Scanner scanner = new Scanner(System.in);
     int kN = scanner.nextInt();
 
+    /**
+     * Perform the operations every parse, and optimize the ones you already did 
+     */
     int[] nums = new int[kN];
     int[] numToInd = new int[kN + 1];
     for (int i = 0; i < kN; i++) {

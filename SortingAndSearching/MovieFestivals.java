@@ -29,6 +29,9 @@ public class MovieFestivals {
     int n = scanner.nextInt();
     Interval[] movieShowings = new Interval[n];
 
+    /**
+     * Sort movies by end, then skip the movies that overlap with the next start
+     */
     for (int i = 0; i < n; i++) {
       movieShowings[i] = new Interval(scanner.nextInt(), scanner.nextInt());
     }

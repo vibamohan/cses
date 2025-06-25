@@ -9,6 +9,10 @@ public class JosephusII {
     final int kSkip = scanner.nextInt() + 1;
     scanner.close();
 
+    /**
+     * Pushes to a queue and brings the kSkip'th value to the top 
+     */
+
     Queue<Integer> q = new LinkedList<>();
     for (int i = 1; i <= kN; i++) q.add(i);
 

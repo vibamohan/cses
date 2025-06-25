@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class PrettyPermutation {
   public static void main(String[] args) {
+    /*
+     * Writes even then odd
+     */
     Scanner scanner = new Scanner(System.in);
     int n = scanner.nextInt();
 

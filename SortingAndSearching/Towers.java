@@ -13,6 +13,10 @@ public class Towers {
     for (int i = 0; i < kN; i++) cubes.add(scanner.nextInt());
 
     int minTowers = 0;
+    /**
+     * Maintain a treemap and pars, only adding increasing blocks on top of one another 
+     * When this property cannot be true, start a new one 
+     */
     TreeMap<Integer, Integer> topK = new TreeMap<>();
     for (int i = 0; i < kN; i++) {
       Entry<Integer, Integer> nextEntry = topK.higherEntry(cubes.get(i));
