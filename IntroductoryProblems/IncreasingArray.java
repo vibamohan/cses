@@ -9,7 +9,7 @@ public class IncreasingArray {
     long moves = 0;
 
     /*
-     * Just loops through the array and 
+     * Just loops through the array and
      * adds the difference needed to stay increasing
      */
     for (int i = 0; i < n - 1; i++) {
