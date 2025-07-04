@@ -1,5 +1,10 @@
-**INTRODUCTORY QUESTIONS** \n
+## INTRODUCTORY QUESTIONS ##
 CHESSBOARD AND QUEENS -- *BITMASKS*
 
-**SORTING AND SEARCHING** \n
+## SORTING AND SEARCHING ##
 MISSING COIN SUM 
+
+
+## References 
+Very nice website to learn the basic patterns
+https://www.hello-algo.com/en/chapter_dynamic_programming/knapsack_problem/#3-method-three-dynamic-programming 
