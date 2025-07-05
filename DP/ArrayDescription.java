@@ -20,16 +20,16 @@ public class ArrayDescription {
       prev[vals[0]] = 1;
     }
 
-    // we use prev and cur for space optimization -- we only go as far back as one level 
+    // we use prev and cur for space optimization -- we only go as far back as one level
     // and we can overwrite the previous level
 
-   
     for (int i = 1; i < kArraySize; i++) {
       int[] cur = new int[kUpperBound + 2];
       for (int v = 1; v <= kUpperBound; v++) {
         if (vals[i] == 0 || vals[i] == v) {
           cur[v] = ((prev[v - 1] + prev[v]) % MOD + prev[v + 1]) % MOD;
-          // recurrence relation: is that the current value can be the previous value, or the previous value + 1, or the previous value - 1
+          // recurrence relation: is that the current value can be the previous value, or the
+          // previous value + 1, or the previous value - 1
         }
       }
       prev = cur;

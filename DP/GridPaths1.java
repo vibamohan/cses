@@ -16,6 +16,7 @@ public class GridPaths1 {
 
     int[][] memo = new int[nDim][nDim];
     memo[0][0] = 0;
+
     for (int r = 0; r < nDim; r++) {
       for (int c = 0; c < nDim; c++) {
         if (grid[r][c] == '*') {
