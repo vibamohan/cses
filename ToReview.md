@@ -4,6 +4,8 @@ CHESSBOARD AND QUEENS -- *BITMASKS*
 ## SORTING AND SEARCHING ##
 MISSING COIN SUM 
 
+## DYNAMIC PROGRAMMING ##
+Elevator Rides - Need to get better understanding of bitmasks
 
 ## References 
 Very nice website to learn the basic patterns
