@@ -31,3 +31,7 @@ Thumbs.db
 
 # If you use GitHub Codespaces or other environments
 *.code-workspace
+
+# Test harness files
+.loghtml/
+solution
