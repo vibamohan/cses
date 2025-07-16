@@ -5,6 +5,9 @@
 
 using P = std::complex<int>;
 
+#define X real()
+#define Y imag()
+
 class Direction {
 public:
   int dx;
@@ -46,8 +49,8 @@ bool bfs(std::vector<std::vector<char>> &grid,
   while (!q.empty()) {
     P cur = q.front();
     q.pop();
-    int x = cur.real();
-    int y = cur.imag();
+    int x = cur.X;
+    int y = cur.Y;
 
     if (grid[x][y] == 'B') {
       end_x = x;
@@ -104,8 +107,8 @@ int main() {
     while (P(x, y) != P(start_x, start_y)) {
       path += direction[x][y];
       P p = parent[x][y];
-      x = p.real();
-      y = p.imag();
+      x = p.X;
+      y = p.Y;
     }
     std::reverse(path.begin(), path.end());
     std::cout << path.size() << std::endl;

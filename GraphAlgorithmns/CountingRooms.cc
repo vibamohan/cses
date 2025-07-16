@@ -5,6 +5,9 @@
 
 using P = std::complex<int>;
 
+#define X real()
+#define Y imag()
+
 class Direction {
 public:
   int dx_;
@@ -12,7 +15,7 @@ public:
 
   Direction(int dx, int dy) : dx_(dx), dy_(dy) {}
 
-  bool IsValid(int x, int y, int limit_x, int limit_y) const {
+  inline bool IsValid(int x, int y, int limit_x, int limit_y) const {
     return ((dx_ + x) >= 0 && (dx_ + x) < limit_x) &&
            ((dy_ + y) >= 0 && (dy_ + y) < limit_y);
   }
@@ -24,7 +27,6 @@ public:
   static const std::vector<Direction> DIRECTIONS;
 };
 
-// Define static constants outside the class
 const Direction Direction::UP = Direction(-1, 0);
 const Direction Direction::DOWN = Direction(1, 0);
 const Direction Direction::LEFT = Direction(0, -1);
@@ -42,8 +44,8 @@ void bfs(std::vector<std::vector<char>> &grid,
   while (!q.empty()) {
     P cur_point = q.front();
     q.pop();
-    int i = cur_point.real();
-    int j = cur_point.imag();
+    int i = cur_point.X;
+    int j = cur_point.Y;
     if (visited[i][j])
       continue;
     visited[i][j] = true;
@@ -51,7 +53,7 @@ void bfs(std::vector<std::vector<char>> &grid,
     for (const Direction &dir : Direction::DIRECTIONS) {
       int translated_x = i + dir.dx_;
       int translated_y = j + dir.dy_;
-      if (dir.IsValid(i, j, n, m) && !visited[translated_x][translated_y] &&
+      if (dir.IsValid(i, j, n, m) && !visited[translated_x][translated_y] and
           grid[translated_x][translated_y] == '.') {
         q.push(P(translated_x, translated_y));
       }
@@ -69,14 +71,13 @@ int main() {
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
       std::cin >> grid[i][j];
-      visited[i][j] = false;
     }
   }
 
   int cc = 0;
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
-      if (!visited[i][j] && grid[i][j] == '.') {
+      if (!visited[i][j] and grid[i][j] == '.') {
         bfs(grid, visited, i, j);
         cc++;
       }
