@@ -8,6 +8,7 @@ using P = std::complex<int>;
 #define X real()
 #define Y imag()
 
+// enum like direction class
 class Direction {
 public:
   int dx_;
