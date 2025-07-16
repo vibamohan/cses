@@ -7,7 +7,7 @@ enum Colors { TEAM_1 = 0, TEAM_2 = 1, UNVISITED = 2 };
 // This version of BFS serves as a bipartite graph check (i.e can be 2 colored
 //   without adjacent edges having the same color)
 // This is because if we keep coloring alternate ways but then encounter
-// a color that is the same as
+// an invalid color in a neighbour, it is not bipartite. 
 bool bfs(std::vector<std::vector<int>> &adj, std::vector<Colors> &colors,
          int start_node) {
   std::queue<int> q;
