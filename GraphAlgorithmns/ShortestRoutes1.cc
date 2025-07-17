@@ -8,7 +8,7 @@ using ll = long long;
 
 constexpr int start = 1;
 // implements dijstrika since all edges are +vely weighted
-void dijkstra(std::vector<std::vector<std::pair<int, int>>> &adj,
+void dijkstra(const std::vector<std::vector<std::pair<int, int>>> &adj,
               std::vector<ll> &distances) {
   std::priority_queue<std::pair<ll, int>, std::vector<std::pair<ll, int>>,
                       std::greater<std::pair<ll, int>>>
@@ -28,13 +28,13 @@ void dijkstra(std::vector<std::vector<std::pair<int, int>>> &adj,
     int dst_node = cur_connection.second;
     if (weight > distances[dst_node])
       continue;
-    distances[dst_node] = std::min(distances[dst_node], weight);
+    distances[dst_node] = weight;
 
-    for (std::pair<ll, int> onward_conn : adj[dst_node]) {
-      ll cur_total_weight = weight + onward_conn.first;
-      if (cur_total_weight < distances[onward_conn.second]) {
-        distances[onward_conn.second] = cur_total_weight;
-        pq.push({cur_total_weight, onward_conn.second});
+    for (const auto &[edge_weight, neighbour] : adj[dst_node]) {
+      ll cur_total_weight = weight + edge_weight;
+      if (cur_total_weight < distances[neighbour]) {
+        distances[neighbour] = cur_total_weight;
+        pq.push({cur_total_weight, neighbour});
       }
     }
   }
