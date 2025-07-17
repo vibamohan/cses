@@ -35,8 +35,9 @@ int main() {
     }
   }
 
-
-  // if we connect all the unvisited nodes to one another one after the other we can connect them in order to each other. then we can visit every node since it is connected.
+  // if we connect all the unvisited nodes to one another one after the other we
+  // can connect them in order to each other. then we can visit every node since
+  // it is connected.
   std::cout << new_edges.size() - 1 << std::endl;
   for (int i = 0; i < new_edges.size() - 1; i++) {
     std::cout << new_edges[i] << " " << new_edges[i + 1] << std::endl;

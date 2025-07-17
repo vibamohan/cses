@@ -85,7 +85,7 @@ private:
   std::vector<int> parent, rank;
 };
 
-std::vector<std::vector<int> > adj;
+std::vector<std::vector<int>> adj;
 std::vector<int> path;
 std::vector<int> parent;
 std::vector<bool> visited;

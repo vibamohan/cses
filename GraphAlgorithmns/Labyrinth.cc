@@ -98,9 +98,9 @@ int main() {
 
   bool found =
       bfs(grid, visited, parent, direction, start_x, start_y, end_x, end_y);
-      
-    // if we found it read in parent and direction for output 
-    // reverse since it is in dest->src order, not src->dest
+
+  // if we found it read in parent and direction for output
+  // reverse since it is in dest->src order, not src->dest
   if (!found) {
     std::cout << "NO" << std::endl;
   } else {
